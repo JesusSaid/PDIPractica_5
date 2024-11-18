@@ -16,5 +16,6 @@ Una ventaja de lo anterior, es que produce imagenes con ejes difuminados (borros
 Los filtros promediantes se utilizan mayormente para la reduccion de detalle "irrelevante" en una imagen. Generalmente, las regiones de pixeles que son pequeñas con respecto al tamaño de la mascara de filtro son consideradas irrelevantes.
 
 La siguiente figura muestra dos filtros suavizantes de 3 x 3.
+
 ![image](https://github.com/user-attachments/assets/bd5a05bb-80c9-441c-9bf7-bda4f136c05d)
 
