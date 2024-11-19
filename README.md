@@ -47,6 +47,7 @@ De esta forma la intensidad de objetos mas pequeños se mezcla con el donfo y ob
 El tamaño de las mascaras establece el tamaño relativo de los objetos que seran mezclados con el fondo. La siguiente figura muestra un ejemplo.
 
 ![image](https://github.com/user-attachments/assets/fdbe17ad-7fc3-47eb-a758-c19500db71bb)
+
 La primer imagen a la izquierda es la original, la que esta hasta la derecha es la mascara obtenida.
 
 # Filtros (No-lineales) de Orden Estatico
