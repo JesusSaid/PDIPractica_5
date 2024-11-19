@@ -63,4 +63,4 @@ Un ejemplo de la efectividad del filtro mediana se observa en la presencia de ru
 
 La funcion principal de los filtros de mediana es forzar a los puntos con niveles de intensidad distintos a parecerse mas a sus vecinos.
 
-Entonces, grupos aislados de pixeles que son luminosos u oscuros con respecto a sus vecinos, y cuya area es menor que {\frac{m}^{2}{2}}\right)}
+Entonces, grupos aislados de pixeles que son luminosos u oscuros con respecto a sus vecinos, y cuya area es menor que {\frac{m}{2}}\right)}
