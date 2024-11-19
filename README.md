@@ -63,4 +63,14 @@ Un ejemplo de la efectividad del filtro mediana se observa en la presencia de ru
 
 La funcion principal de los filtros de mediana es forzar a los puntos con niveles de intensidad distintos a parecerse mas a sus vecinos.
 
-Entonces, grupos aislados de pixeles que son luminosos u oscuros con respecto a sus vecinos, y cuya area es menor que {\left({\frac{m^{2}}{2}}\right)}
+Entonces, grupos aislados de pixeles que son luminosos u oscuros con respecto a sus vecinos, y cuya area es menor que m**2/2 son eliminados por un filtro de mediana m x m, i.e son fornzados a la intensidad mediana de sus vecinos.
+
+Los grupos grandes son menos afectados.
+
+Otros filtros de orden estadisticos son el filtro **maximo** y **minimo**. Ej: la respuesta despuesta de un filtro maximo 3 x 3 es:
+
+R = máx{Zk | k = 1, 2, ..., 9}
+
+Este encuentra el punto mas brillante de la vecindad.
+
+
