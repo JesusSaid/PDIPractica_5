@@ -22,6 +22,45 @@ La siguiente figura muestra dos filtros suavizantes de 3 x 3.
 El primer filtro produce el promedio estandar de los pixeles bajo la mascara, esto es:
 $$(\left (R = {\frac{1}{9}}(\sum_{i=1}^9 Z_i)) \right)$$
 
+Por cuestiones practicas (computacionales), los coeficientes del filtro son todos 1s, para qie al final del proceso el resultado se divide por 9.
 
+De manera general, una mascara m x n tendria una constante normalizadora igual a {\left({\frac{1}{mn}}\right)}.
 
+La segunda mascara produce un promedio pesado (ponderado), es decir, los pixeles son multiplicados por coeficientes diferentes, dando mayor importnacia a algunos pixeles que otros.
 
+Esta estrategia se usa para reducir la difuminacion en el proceso de suavizado.
+
+En la practica, es dificil notar la diferencia en la imagen resultante cuando se utilizan cualquiera de las dos mascaras, debido a su tamaño pequeño (3 x 3).
+
+La implementacion general para filtrar una imagen M x N con un filtro promediante pesado de tamaño m x n es:
+
+![image](https://github.com/user-attachments/assets/b0b66796-29f7-4822-9ade-95705fc33260)
+
+La siguiente figura muestra los efecto de suavizado como una funcion del tamaño de filtro. Aqui, se utilizan filtro promediantes cuadrados de tamaños m = 3, 5, 9, 15 y 35, respectivamente.
+
+![image](https://github.com/user-attachments/assets/40fe7d13-6890-4783-a411-7d46c3a231af)
+
+Una aplicacion importatnte del promediado espacial es difuminar una imagen para el proposito de obtener una representacion gruesa de los objetos de interes.
+
+De esta forma la intensidad de objetos mas pequeños se mezcla con el donfo y objetos mas grandes se convierten en masa amorfa y facil de detectar.
+
+El tamaño de las mascaras establece el tamaño relativo de los objetos que seran mezclados con el fondo. La siguiente figura muestra un ejemplo.
+
+![image](https://github.com/user-attachments/assets/fdbe17ad-7fc3-47eb-a758-c19500db71bb)
+La primer imagen a la izquierda es la original, la que esta hasta la derecha es la mascara obtenida.
+
+# Filtros (No-lineales) de Orden Estatico
+
+La respuesta de los filtros de orden estatico se basa en el ordenamiento (ranking) de los pixeles contenidos en el área de la iamgen incluida por el filtro. Despues de reemplaza el valor del pixel central con el valor determinado por el resultado del ranking.
+
+El filtro mas conocido de este tipo es el filtro de **mediana**, el cual reemplaza el valor de un pixel pro la mediana de los valores de intensidad en la vecindad de dicho pixel.
+
+Este filtro es popular debido a que para ciertor topo de ruido aleatorio proporciona excelentes capacidades de reduccion de ruido, con menos difuminacion que los filtros suavizantes lineales de tamaño similar.
+
+Un ejemplo de la efectividad del filtro mediana se observa en la presencia de ruido de "sal y pimienta".
+
+![image](https://github.com/user-attachments/assets/0620baba-7e1b-48da-8278-cedc8eb0ec85)
+
+La funcion principal de los filtros de mediana es forzar a los puntos con niveles de intensidad distintos a parecerse mas a sus vecinos.
+
+Entonces, grupos aislados de pixeles que son luminosos u oscuros con respecto a sus vecinos, y cuya area es menor que {\frac{m}^{2}{2}}\right)}
