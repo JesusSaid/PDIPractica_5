@@ -8,7 +8,7 @@ La reduccion de ruido se puede realizar mediante la difuminacion con un filtro l
 # Introduccion
 Los filtros suavizantes son utilizados para difuminacion (blurring) y para reduccion de ruido.
 
-La difuminacion se utiliza en tareas de preprocesamiento, tales como la eliminacion de detalles pequelos de una imagen previo a la extraccion de objetos (grandes), y ka union de pequeños espacios vacios en lineas o curvas.
+La difuminacion se utiliza en tareas de preprocesamiento, tales como la eliminacion de detalles pequelos de una imagen previo a la extraccion de objetos (grandes), y la union de pequeños espacios vacios en lineas o curvas.
 
 La reduccion de ruido se puede realizar mediante la difuminacion con un filtro lineal y mediante filtrado no-lineal.
 
