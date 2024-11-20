@@ -5,6 +5,13 @@ Los filtros suavizantes son utilizados para difuminacion (blurring) y para recud
 La difuminacion se utiliza en tareas de procesamiento, tales como la eliminacion de detalles pequeños de una imagen previo a la extraccion de objetos (grandes), y la union de pequeños espacios vacios en lineas o curvas.
 La reduccion de ruido se puede realizar mediante la difuminacion con un filtro lineal y tambien mediante filtrado no-lineal.
 
+#Introduccion
+Los filtros suavizantes son utilizados para difuminacion (blurring) y para reduccion de ruido.
+
+La difuminacion se utiliza en tareas de preprocesamiento, tales como la eliminacion de detalles pequelos de una imagen previo a la extraccion de objetos (grandes), y ka union de pequeños espacios vacios en lineas o curvas.
+
+La reduccion de ruido se puede realizar mediante la difuminacion con un filtro lineal y mediante filtrado no-lineal.
+
 # Filtros Suavizantes Lineales
 La salida o respuesta de un filtro espacial lineal suavizante es simplemente el promedio de los pixeles contenidos en la vecindad de la mascara de filtro. Tambien se conocen como filtros promediantes o filtros pasa-baja.
 La idea basica es reemplazar el valor de cada pixel en una imagen por el promedio de los niveles de intensidad en la vecindad definida por la mascara de filtro.
