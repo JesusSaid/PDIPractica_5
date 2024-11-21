@@ -87,7 +87,7 @@ if __name__ == "__main__":
             1: "altoContraste2.jpg",
             2: "conba.jpg",
             3: "altaIluminacion2.jpg",
-            4: "bajaIluminacion.jpg"
+            4: "bajaIlum2.jpg"
         }
 
         if image_option not in image_files:
@@ -123,7 +123,7 @@ if __name__ == "__main__":
 
             if option in [1, 2, 3, 4]:
                 try:
-                    kernel_size = int(input("Ingresa el tamaño de la máscara (un solo dígito): "))
+                    kernel_size = int(input("Ingresa el tamaño de la máscara (un solo dígito ejemplo: '3') : "))
                 except ValueError:
                     print("Por favor, ingresa un número válido para la máscara.")
                     continue
@@ -144,8 +144,31 @@ if __name__ == "__main__":
                 result = minimum_filter_custom(image, kernel_size)
                 title = f"Filtro de Mínimo {kernel_size}x{kernel_size}"
             elif option == 5:  # Laplaciano
-                result = laplacian_filter(image, variant="direct")
-                title = "Filtro Laplaciano (Directo)"
+                while True:
+                    print("\nSelecciona la variante del filtro Laplaciano:")
+                    print("1. Vecindad 4")
+                    print("2. Vecindad 8")
+                    print("0. Volver al menú de filtros")
+
+                    try:
+                        laplacian_option = int(input("Ingresa una opción: "))
+                    except ValueError:
+                        print("Por favor, ingresa un número válido.")
+                        continue
+
+                    if laplacian_option == 0:
+                        break
+                    elif laplacian_option == 1:
+                        result = laplacian_filter(image, variant="direct")
+                        title = "Filtro Laplaciano (4 vecinos)"
+                        break
+                    elif laplacian_option == 2:
+                        result = laplacian_filter(image, variant="diagonal")
+                        title = "Filtro Laplaciano (8 vecinos)"
+                        break
+                    else:
+                        print("Opción no válida. Inténtalo de nuevo.")
+
             elif option == 6:  # Gradiente
                 result = gradient_filter(image)
                 title = "Filtro de Gradiente"
@@ -153,16 +176,24 @@ if __name__ == "__main__":
                 print("Opción no válida. Inténtalo de nuevo.")
                 continue
 
+            # Crear imagen combinada
+            combined = np.clip(image.astype(float) + result.astype(float), 0, 255).astype(np.uint8)
+
             # Mostrar resultados
-            plt.figure(figsize=(10, 5))
-            plt.subplot(1, 2, 1)
+            plt.figure(figsize=(15, 5))
+            plt.subplot(1, 3, 1)
             plt.imshow(image, cmap='gray')
             plt.title("Imagen Original")
             plt.axis('off')
 
-            plt.subplot(1, 2, 2)
+            plt.subplot(1, 3, 2)
             plt.imshow(result, cmap='gray')
             plt.title(title)
+            plt.axis('off')
+
+            plt.subplot(1, 3, 3)
+            plt.imshow(combined, cmap='gray')
+            plt.title("Combinación Original + Filtro")
             plt.axis('off')
 
             plt.tight_layout()
